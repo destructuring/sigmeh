@@ -16,7 +16,7 @@ source "$shome/bin/_treadstone"
 function main {
   eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=--deactivate-all)
   eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$shome/vendor/perl5)
-  AUTOMATED_TESTING=1 PERL_MM_USE_DEFAULT=1 cpan YAML Bundle::DBI DBD::SQLite
+  AUTOMATED_TESTING=1 PERL_MM_USE_DEFAULT=1 cpan Bundle::DBI DBD::SQLite Moose
 }
 
 require 'sub' "$BASH_SOURCE" "$@"
