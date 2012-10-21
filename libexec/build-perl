@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#/ NAME
+#/     build-perl -- build perl modules for irssi plugins
+#/
+#/ SYNOPSIS
+#/     build perl
+
+# figure out the project root under which bin, lib live
+shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
+
+# load a jason bourne library
+source "$shome/bin/_treadstone"
+
+# entry point
+function main {
+  eval $(perl -I$HOME/foo/lib/perl5 -Mlocal::lib=$shome/vendor/perl5)
+  AUTOMATED_TESTING=1 PERL_MM_USE_DEFAULT=1 cpan YAML Bundle::DBI DBD::SQLite
+}
+
+require 'sub' "$BASH_SOURCE" "$@"
