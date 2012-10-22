@@ -14,7 +14,7 @@ source "$shome/bin/_treadstone"
 
 # entry point
 function main {
-  $shome/bin/build cpan Bundle::DBI DBD::SQLite Moose DBIx::Class
+  $shome/bin/build cpan $(cat $shome/Cpanfile)
 }
 
 require 'sub' "$BASH_SOURCE" "$@"

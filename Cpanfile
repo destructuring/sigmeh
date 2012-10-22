@@ -1,0 +1,5 @@
+Bundle::DBI
+DBD::SQLite
+Moose
+Class::DBI
+DBIx::Class
